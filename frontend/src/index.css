@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dac-950 text-white font-sans antialiased;
+  }
+}
+
+.glass-card {
+  @apply bg-dac-900/60 backdrop-blur-lg border border-dac-800 rounded-2xl shadow-xl;
+}
+
+.primary-gradient {
+  @apply bg-gradient-to-r from-blue-500 to-indigo-600;
+}
