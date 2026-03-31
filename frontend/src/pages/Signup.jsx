@@ -3,6 +3,7 @@ import { AuthContext } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 
 export default function Signup() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -12,7 +13,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await signup(email, password);
+      await signup(email, password, name);
       // Immediately redirect to main feed upon signup 
       navigate('/');
     } catch (err) {
@@ -29,6 +30,12 @@ export default function Signup() {
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && <div className="p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200 text-sm text-center">{error}</div>}
         <input 
+          type="text" 
+          placeholder="Full Name"
+          className="w-full p-3 bg-dac-800/50 border border-dac-700 rounded-lg focus:outline-none focus:border-dac-500 transition-colors"
+          value={name} onChange={e => setName(e.target.value)} required 
+        />
+        <input 
           type="email" 
           placeholder="Email address"
           className="w-full p-3 bg-dac-800/50 border border-dac-700 rounded-lg focus:outline-none focus:border-dac-500 transition-colors"
@@ -38,7 +45,7 @@ export default function Signup() {
           type="password" 
           placeholder="Password"
           className="w-full p-3 bg-dac-800/50 border border-dac-700 rounded-lg focus:outline-none focus:border-dac-500 transition-colors"
-          value={password} onChange={e => setPassword(e.target.value)} required 
+          value={password} onChange={e => setPassword(e.target.value)} minLength={6} required 
         />
         <button className="w-full p-3 primary-gradient text-white rounded-lg font-semibold shadow-lg shadow-indigo-500/20 hover:opacity-90 transition-opacity">
           Sign Up

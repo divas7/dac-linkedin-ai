@@ -10,6 +10,7 @@ generator client {
 model User {
   id            String   @id @default(uuid())
   email         String   @unique
+  name          String?  // Added for user profile
   passwordHash  String
   preferences   String   @default("[]") // JSON string of themes like ["Technology", "Marketing"]
   createdAt     DateTime @default(now())
