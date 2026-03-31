@@ -46,6 +46,6 @@ Respond ONLY with the RAW JSON object. Do not include markdown codeblocks (no \`
     };
   } catch (error) {
     console.error('Groq Generation Error:', error);
-    throw new Error('Failed to generate post. Check your Groq API key and rate limits.');
+    throw new Error(`Generation failed: ${error.message}`);
   }
 }
