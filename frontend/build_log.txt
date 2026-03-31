@@ -1,0 +1,38 @@
+
+> dac-frontend@1.0.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 3 modules transformed.
+
+PWA v0.20.5
+mode      generateSW
+precache  1 entries (0.00 KiB)
+files generated
+  dist/sw.js
+  dist/workbox-8c29f6e4.js
+warnings
+  One of the glob patterns doesn't match any files. Please remove or fix the following: {
+  "globDirectory": "/Users/divaspratapsingh/Desktop/Antigravity/DAC/frontend/dist",
+  "globPattern": "**/*.{js,wasm,css,html}",
+  "globIgnores": [
+    "**/node_modules/**/*",
+    "sw.js",
+    "workbox-*.js"
+  ]
+}
+
+x Build failed in 2.01s
+error during build:
+[vite-plugin-pwa:build] [plugin vite-plugin-pwa:build] src/index.css (undefined:NaN): There was an error during the build:
+  [postcss] It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+Additionally, handling the error in the 'buildEnd' hook caused the following error:
+  [postcss] It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+file: /Users/divaspratapsingh/Desktop/Antigravity/DAC/frontend/src/index.css:undefined:NaN
+    at getRollupError (file:///Users/divaspratapsingh/Desktop/Antigravity/DAC/frontend/node_modules/rollup/dist/es/shared/parseAst.js:406:41)
+    at file:///Users/divaspratapsingh/Desktop/Antigravity/DAC/frontend/node_modules/rollup/dist/es/shared/node-entry.js:23863:39
+    at async catchUnfinishedHookActions (file:///Users/divaspratapsingh/Desktop/Antigravity/DAC/frontend/node_modules/rollup/dist/es/shared/node-entry.js:23321:16)
+    at async rollupInternal (file:///Users/divaspratapsingh/Desktop/Antigravity/DAC/frontend/node_modules/rollup/dist/es/shared/node-entry.js:23846:5)
+    at async build (file:///Users/divaspratapsingh/Desktop/Antigravity/DAC/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65709:14)
+    at async CAC.<anonymous> (file:///Users/divaspratapsingh/Desktop/Antigravity/DAC/frontend/node_modules/vite/dist/node/cli.js:829:5)
