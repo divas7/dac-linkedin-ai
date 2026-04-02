@@ -88,12 +88,13 @@ export default function Feed() {
               <p className="text-sm text-dac-200 whitespace-pre-wrap leading-relaxed">{post.content}</p>
               
               {post.imagePrompt && (
-                <div className="w-full mt-4 rounded-xl overflow-hidden border border-dac-700/50 shadow-inner">
+                <div className="w-full mt-4 rounded-xl overflow-hidden border border-dac-700/50 shadow-inner bg-dac-800/40 min-h-[160px] flex items-center justify-center">
                   <img 
-                    src={`https://image.pollinations.ai/prompt/${encodeURIComponent(post.imagePrompt)}?width=800&height=800&nologo=true`} 
+                    src={`https://image.pollinations.ai/prompt/${encodeURIComponent(post.imagePrompt + ' professional linkedin digital art')}&width=800&height=400&seed=${post.id?.slice(0,8) || 42}&nologo=true&model=flux`}
                     alt="AI Generated Context" 
-                    className="w-full h-auto object-cover max-h-64"
+                    className="w-full h-auto object-cover"
                     loading="lazy"
+                    onError={(e) => { e.target.style.display='none'; e.target.parentElement.style.display='none'; }}
                   />
                 </div>
               )}
