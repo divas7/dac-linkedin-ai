@@ -87,6 +87,17 @@ export default function Feed() {
               <h3 className="font-bold text-lg mb-2 text-white leading-tight">{post.hook}</h3>
               <p className="text-sm text-dac-200 whitespace-pre-wrap leading-relaxed">{post.content}</p>
               
+              {post.imagePrompt && (
+                <div className="w-full mt-4 rounded-xl overflow-hidden border border-dac-700/50 shadow-inner">
+                  <img 
+                    src={`https://image.pollinations.ai/prompt/${encodeURIComponent(post.imagePrompt)}?width=800&height=800&nologo=true`} 
+                    alt="AI Generated Context" 
+                    className="w-full h-auto object-cover max-h-64"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              
               {/* Actions */}
               <div className="mt-4 pt-4 border-t border-dac-800 flex justify-end space-x-3">
                 <button 

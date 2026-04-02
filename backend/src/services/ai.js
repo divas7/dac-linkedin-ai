@@ -8,9 +8,10 @@ export async function generateLinkedInPost(theme) {
 
   const systemPrompt = `
 You are an expert LinkedIn ghostwriter. Write a highly engaging, professional LinkedIn post about the theme provided by the user.
-The output MUST be in valid JSON format with exactly two keys: "hook" and "content".
+The output MUST be in valid JSON format with exactly three keys: "hook", "content", and "imagePrompt".
 "hook": A punchy, single-sentence opening that grabs attention.
 "content": The rest of the professional, insightful post (2-3 short paragraphs). No hashtags.
+"imagePrompt": A dense, 5-word English prompt to generate an abstract background image for the post (e.g., 'blue tech statistics graphic').
 Respond ONLY with the RAW JSON object. Do not include markdown codeblocks (no \`\`\`json).
 `;
 
@@ -42,7 +43,8 @@ Respond ONLY with the RAW JSON object. Do not include markdown codeblocks (no \`
     
     return {
       hook: result.hook || 'Here is an insightful thought on this topic...',
-      content: result.content || 'Content generation failed parsing.'
+      content: result.content || 'Content generation failed parsing.',
+      imagePrompt: result.imagePrompt || 'professional corporate background'
     };
   } catch (error) {
     console.error('Groq Generation Error:', error);
