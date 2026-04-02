@@ -14,7 +14,7 @@ const ProtectedRoute = ({ children }) => {
 function AppRoutes() {
   return (
     <div className="min-h-[100dvh] flex items-center justify-center p-4">
-      <img src="/logo-white.png" alt="DAC Logo" className="fixed top-6 right-6 h-10 w-auto z-50 pointer-events-none drop-shadow-md" />
+      <img src="/logo-white.jpg" alt="DAC Logo" className="fixed top-6 right-6 h-10 w-auto z-50 pointer-events-none drop-shadow-md mix-blend-screen" />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
