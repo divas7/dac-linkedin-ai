@@ -56,15 +56,16 @@ router.post('/generate', authenticate, async (req, res) => {
     const { theme } = req.body;
     if (!theme) return res.status(400).json({ error: 'Theme is required' });
 
-    // Execute zero-cost local Ollama inference
-    const { hook, content } = await generateLinkedInPost(theme);
+    // Execute API inference
+    const { hook, content, imagePrompt } = await generateLinkedInPost(theme);
 
     const post = await prisma.post.create({
       data: {
         userId: req.userId,
         theme,
         hook,
-        content
+        content,
+        imagePrompt
       }
     });
 

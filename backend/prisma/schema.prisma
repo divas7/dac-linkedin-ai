@@ -18,11 +18,12 @@ model User {
 }
 
 model Post {
-  id        String   @id @default(uuid())
-  userId    String
-  theme     String
-  hook      String
-  content   String
-  createdAt DateTime @default(now())
-  user      User     @relation(fields: [userId], references: [id])
+  id          String   @id @default(uuid())
+  userId      String
+  theme       String
+  hook        String
+  content     String
+  imagePrompt String?
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id])
 }
