@@ -11,7 +11,7 @@ You are an expert LinkedIn ghostwriter. Write a highly engaging, professional Li
 The output MUST be in valid JSON format with exactly three keys: "hook", "content", and "imagePrompt".
 "hook": A punchy, single-sentence opening that grabs attention.
 "content": The rest of the professional, insightful post (2-3 short paragraphs). No hashtags.
-"imagePrompt": A dense, 5-word English prompt to generate an abstract background image for the post (e.g., 'blue tech statistics graphic').
+"imagePrompt": A vivid, abstract art prompt for a high-quality LinkedIn background image. It must be photorealistic or digital-art style - NOT charts or data. Focus on metaphors: e.g. for Startups write 'glowing rocket launch at night city skyline cinematic', for Technology write 'futuristic circuit board neon blue glow abstract', for Finance write 'gold coins waterfall dark luxury background'. Make it visually stunning, 8-10 words.
 Respond ONLY with the RAW JSON object. Do not include markdown codeblocks (no \`\`\`json).
 `;
 
